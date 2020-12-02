@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "959099436187",
+    "firebase_url": "https://flutter-admotors.firebaseio.com",
+    "project_id": "flutter-admotors",
+    "storage_bucket": "flutter-admotors.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959099436187:android:7e8bd35b9dd96314b81a3e",
+        "android_client_info": {
+          "package_name": "com.panaceasoft.flutteradmotors"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959099436187-pd40s9qlfvv051iscfr5iarajjjs0j0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-Xi0wbksSBie63Sf80NDrSu7QV6zzaws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959099436187-pd40s9qlfvv051iscfr5iarajjjs0j0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
