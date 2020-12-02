@@ -657,20 +657,20 @@ class _HomeViewState extends State<DashboardView>
                                       onAgreeTap: () async {
                                         Navigator.of(context).pop();
 
-                                        PsProgressDialog.showDialog(context);
+                                       await PsProgressDialog.showDialog(context);
                                         // callLogout(
                                         //     provider,
                                         //     deleteTaskProvider,
                                         //     PsConst
                                         //         .REQUEST_CODE__MENU_HOME_FRAGMENT);
                                         final UserLogoutHolder
-                                            userlogoutHolder = UserLogoutHolder(
+                                            userlogoutHolder =await UserLogoutHolder(
                                                 userId: provider
                                                     .psValueHolder.loginUserId);
                                         final PsResource<ApiStatus> apiStatus =
                                             await provider.userLogout(
                                                 userlogoutHolder.toMap());
-                                        PsProgressDialog.dismissDialog();
+                                       await PsProgressDialog.dismissDialog();
                                         if (apiStatus.data != null) {
                                           callLogout(
                                               provider,
@@ -678,8 +678,12 @@ class _HomeViewState extends State<DashboardView>
                                               PsConst
                                                   .REQUEST_CODE__MENU_HOME_FRAGMENT);
                                         }
+                                        if(provider.psValueHolder.loginUserId==null||provider.psValueHolder.loginUserId=="")Navigator.pushNamed(context, RoutePaths.login_container);
+
+                                        // Navigator.pushNamed(context, RoutePaths.login_container);
                                       });
                                 });
+
                           },
                         ),
                       ),
@@ -1782,6 +1786,9 @@ class _CallLoginWidget extends StatelessWidget {
   final int currentIndex;
   @override
   Widget build(BuildContext context) {
+    final provider=Provider.of<UserProvider>(context,listen: true).psValueHolder.loginUserId;
+    if(provider==null||provider=="")Navigator.pushNamed(context, RoutePaths.login_container);
+
     return Stack(
       children: <Widget>[
         Container(

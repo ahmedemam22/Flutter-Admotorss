@@ -119,7 +119,9 @@ class AppLoadingView extends StatelessWidget {
         }
 
       } else if (_psAppInfo.status == PsStatus.ERROR) {
-        if (provider.psValueHolder.locationId != null) {
+        if (provider.psValueHolder.userIdToVerify != null||provider.psValueHolder.userIdToVerify != "") {
+          print(provider.psValueHolder.userIdToVerify);
+          print("sssssssssss");
           Navigator.pushReplacementNamed(
             context,
             RoutePaths.home,
@@ -127,12 +129,14 @@ class AppLoadingView extends StatelessWidget {
         } else {
           Navigator.pushReplacementNamed(
             context,
-            RoutePaths.itemLocationList,
+            RoutePaths.login_container,
           );
         }
       }
     } else {
-      if (provider.psValueHolder.locationId != null) {
+      if (provider.psValueHolder.userIdToVerify != null||provider.psValueHolder.userIdToVerify != "") {
+        print(provider.psValueHolder.userIdToVerify);
+        print("ffffffffffffffff");
         Navigator.pushReplacementNamed(
           context,
           RoutePaths.home,
@@ -140,7 +144,7 @@ class AppLoadingView extends StatelessWidget {
       } else {
         Navigator.pushReplacementNamed(
           context,
-          RoutePaths.itemLocationList,
+          RoutePaths.login_container,
         );
       }
     }
@@ -183,7 +187,8 @@ class AppLoadingView extends StatelessWidget {
       appInfoProvider.replaceVersionForceUpdateData(false);
       //
       if (appInfoProvider.psValueHolder != null &&
-          appInfoProvider.psValueHolder.locationId != null) {
+          appInfoProvider.psValueHolder.loginUserId != null&&appInfoProvider.psValueHolder.loginUserId != "") {
+        print("xxxxxxxxxx");
         Navigator.pushReplacementNamed(
           context,
           RoutePaths.home,
@@ -191,7 +196,7 @@ class AppLoadingView extends StatelessWidget {
       } else {
         Navigator.pushReplacementNamed(
           context,
-          RoutePaths.itemLocationList,
+          RoutePaths.login_container,
         );
       }
     }
@@ -215,7 +220,9 @@ class AppLoadingView extends StatelessWidget {
       appInfoProvider.replaceVersionForceUpdateData(false);
       callVersionUpdateDialog(context, psAppInfo, appInfoProvider);
     } else {
-      if (appInfoProvider.psValueHolder.locationId != null) {
+      if (appInfoProvider.psValueHolder.loginUserId != null&&appInfoProvider.psValueHolder.loginUserId != "") {
+        print("yyyyyyyyy");
+
         Navigator.pushReplacementNamed(
           context,
           RoutePaths.home,
@@ -223,7 +230,7 @@ class AppLoadingView extends StatelessWidget {
       } else {
         Navigator.pushReplacementNamed(
           context,
-          RoutePaths.itemLocationList,
+          RoutePaths.login_container,
         );
       }
     }
@@ -248,7 +255,9 @@ class AppLoadingView extends StatelessWidget {
                 rightButtonText:
                     Utils.getString(context, 'app_info__update_button_name'),
                 onCancelTap: () {
-                  if (appInfoProvider.psValueHolder.locationId != null) {
+                  if (appInfoProvider.psValueHolder.loginUserId != null&&appInfoProvider.psValueHolder.loginUserId != "") {
+                    print("zzzzzzzz");
+
                     Navigator.pushReplacementNamed(
                       context,
                       RoutePaths.home,
@@ -256,12 +265,14 @@ class AppLoadingView extends StatelessWidget {
                   } else {
                     Navigator.pushReplacementNamed(
                       context,
-                      RoutePaths.itemLocationList,
+                      RoutePaths.login_container,
                     );
                   }
                 },
                 onUpdateTap: () async {
-                  if (appInfoProvider.psValueHolder.locationId != null) {
+                  if (appInfoProvider.psValueHolder.loginUserId != null&&appInfoProvider.psValueHolder.loginUserId != "") {
+                    print("ooooooooooo");
+
                     Navigator.pushReplacementNamed(
                       context,
                       RoutePaths.home,
@@ -269,7 +280,7 @@ class AppLoadingView extends StatelessWidget {
                   } else {
                     Navigator.pushReplacementNamed(
                       context,
-                      RoutePaths.itemLocationList,
+                      RoutePaths.login_container,
                     );
                   }
 

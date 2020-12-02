@@ -21,6 +21,7 @@ import 'package:flutteradmotors/ui/common/ps_frame_loading_widget.dart';
 import 'package:flutteradmotors/ui/common/ps_ui_widget.dart';
 import 'package:flutteradmotors/ui/item/item/product_horizontal_list_item_for_profile.dart';
 import 'package:flutteradmotors/ui/item/paid_ad/paid_ad_item_horizontal_list_item.dart';
+import 'package:flutteradmotors/utils/global_app.dart';
 import 'package:flutteradmotors/utils/ps_progress_dialog.dart';
 import 'package:flutteradmotors/utils/utils.dart';
 import 'package:flutteradmotors/viewobject/api_status.dart';
@@ -99,7 +100,7 @@ class _ProfilePageState extends State<ProfileView>
             opacity: animationControllerForFab,
             child: ScaleTransition(
               scale: animationControllerForFab,
-              child: FloatingActionButton.extended(
+              child: GlobalAppRepo.isVendor?Container():FloatingActionButton.extended(
                 onPressed: () async {
                   if (await Utils.checkInternetConnectivity()) {
                     Utils.navigateOnUserVerificationView(

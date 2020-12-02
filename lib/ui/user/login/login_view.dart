@@ -402,6 +402,7 @@ class __CardWidgetState extends State<_TextFieldAndSignInButtonWidget> {
                   Utils.getString(context, 'warning_dialog__email_format'));
                 }
               }
+              Navigator.pushNamed(context, RoutePaths.home);
             },
           ),
         ),
