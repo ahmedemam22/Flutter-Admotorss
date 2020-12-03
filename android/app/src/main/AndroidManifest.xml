@@ -19,7 +19,7 @@
         android:name=".Application" 
         tools:replace="android:label"
         android:usesCleartextTraffic="true"
-        android:label="Flutter Admotors"
+        android:label="Car Care"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

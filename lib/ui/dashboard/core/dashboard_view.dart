@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutteradmotors/api/common/ps_resource.dart';
 import 'package:flutteradmotors/config/ps_config.dart';
@@ -678,9 +679,11 @@ class _HomeViewState extends State<DashboardView>
                                               PsConst
                                                   .REQUEST_CODE__MENU_HOME_FRAGMENT);
                                         }
-                                        if(provider.psValueHolder.loginUserId==null||provider.psValueHolder.loginUserId=="")Navigator.pushNamed(context, RoutePaths.login_container);
-
-                                        // Navigator.pushNamed(context, RoutePaths.login_container);
+                                      //  if(provider.psValueHolder.loginUserId==null||provider.psValueHolder.loginUserId=="")Navigator.pushNamed(context, RoutePaths.login_container);
+                                        SchedulerBinding.instance.addPostFrameCallback((_) {
+                                          Navigator.of(scaffoldKey.currentContext).pushReplacementNamed(RoutePaths.login_container);
+                                        });
+                                         //Navigator.pushNamed(context, );
                                       });
                                 });
 
@@ -1780,14 +1783,15 @@ class _CallLoginWidget extends StatelessWidget {
       @required this.updateUserCurrentIndex,
       @required this.currentIndex});
   final Function updateCurrentIndex;
+
   final Function updateUserCurrentIndex;
   final AnimationController animationController;
   final Animation<double> animation;
   final int currentIndex;
+
   @override
   Widget build(BuildContext context) {
-    final provider=Provider.of<UserProvider>(context,listen: true).psValueHolder.loginUserId;
-    if(provider==null||provider=="")Navigator.pushNamed(context, RoutePaths.login_container);
+
 
     return Stack(
       children: <Widget>[
