@@ -157,8 +157,14 @@ bool isVendor=false;
 
     return _apiStatus;
   }
-  void change_isVendor(){
-    isVendor=!isVendor;
+  void change_isVendor([String value]){
+    if(value==null)isVendor=!isVendor;
+    else {
+      if (value == "vendor")
+        isVendor = true;
+      else
+        isVendor = false;
+    }
     GlobalAppRepo.isVendor=isVendor;
     notifyListeners();
   }

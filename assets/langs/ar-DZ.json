@@ -5,6 +5,8 @@
     "user_status__deleted": "تم حذف حسابك من قبل المسؤول",
     "user_status__banned": "تم حظر حسابك من قبل المسؤول",
     "user_status__unpublished": "لم يتم نشر حسابك من قبل المسؤول",
+    "login_vendor": "سجل كبائع",
+    "login_user": "سجل كمستخدم",
     "language_setting__title": " إعدادات اللغة",
     "language_selection__title": " اختيار اللغة",
     "language_selection__select": " الرجاء اختر اللغة",

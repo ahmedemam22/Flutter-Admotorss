@@ -24,6 +24,7 @@ class LoginView extends StatefulWidget {
     Key key,
     this.animationController,
     this.animation,
+    this.type,
     this.onProfileSelected,
     this.onForgotPasswordSelected,
     this.onSignInSelected,
@@ -31,6 +32,7 @@ class LoginView extends StatefulWidget {
     this.onFbSignInSelected,
     this.onGoogleSignInSelected,
   }) : super(key: key);
+  final String type;
 
   final AnimationController animationController;
   final Animation<double> animation;
@@ -78,21 +80,23 @@ class _LoginViewState extends State<LoginView> {
                 provider: provider,
                 text: Utils.getString(context, 'login__submit'),
                 onProfileSelected: widget.onProfileSelected,
+                type: widget.type,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Checkbox(
-                    activeColor:
-                    Utils.isLightMode(context) ? PsColors.mainColor : Colors.black12,
-                    value: provider.isVendor,
-                    onChanged: (bool value) {
-                      provider.change_isVendor();
+
+
+SizedBox(height:  PsDimens.space20,),
+                  InkWell(
+                    onTap: (){
+                      Navigator.pushReplacementNamed(context, widget.type=="user"?RoutePaths.login_container_vendor:RoutePaths.login_container);
                     },
+                    child: Text("SIGN IN AS A ${widget.type=="user"?'VENDOR':'User'}?",style: TextStyle(
+                      fontSize: PsDimens.space20,
+                      decoration: TextDecoration.underline,
+
+                    ),),
                   ),
-                  Text("Are you vendor?")
-                ],
-              ),
+
+
               _spacingWidget,
               _DividerORWidget(),
               const SizedBox(
@@ -249,10 +253,12 @@ class _TextFieldAndSignInButtonWidget extends StatefulWidget {
     @required this.provider,
     @required this.text,
     this.onProfileSelected,
+    this.type
   });
 
   final UserProvider provider;
   final String text;
+  final String type;
   final Function onProfileSelected;
 
   @override
@@ -402,6 +408,7 @@ class __CardWidgetState extends State<_TextFieldAndSignInButtonWidget> {
                   Utils.getString(context, 'warning_dialog__email_format'));
                 }
               }
+              widget.provider.change_isVendor(widget.type);
               Navigator.pushNamed(context, RoutePaths.home);
             },
           ),

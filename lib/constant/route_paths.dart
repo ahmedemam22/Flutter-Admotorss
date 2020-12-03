@@ -30,6 +30,7 @@ class RoutePaths {
   static const String user_register_container = '/user_register_container';
   static const String login = '/login';
   static const String login_container = '/login_container';
+  static const String login_container_vendor = '/login_container_vendor';
   static const String profile_container = '/profile_container';
   static const String profile = '/profile';
   static const String user_verify_email = '/user_verify_email';

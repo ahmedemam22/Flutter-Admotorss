@@ -60,6 +60,8 @@
   "dashboard__discount_product_description": "Donec consectetur sodales nulla et sagittis. Cras ut viverra lectus, ac interdum sem. Maecenas porttitor scelerisque eros, sit amet auctor enim gravida in.",
   "purchased_product__title": "Purchased Products",
   "profile__title": "Profile",
+  "login_vendor": "Login as a Vendor",
+  "login_user": "Login as a User",
   "profile__edit": "Edit",
   "profile__follower": "Followers",
   "profile__following": "Following",

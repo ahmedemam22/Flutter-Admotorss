@@ -59,6 +59,7 @@ import 'package:flutteradmotors/ui/user/edit_profile/edit_profile_view.dart';
 import 'package:flutteradmotors/ui/user/forgot_password/forgot_password_container_view.dart';
 import 'package:flutteradmotors/ui/user/list/follower_user_list_view.dart';
 import 'package:flutteradmotors/ui/user/list/following_user_list_view.dart';
+import 'package:flutteradmotors/ui/user/login/login_container_vendor.dart';
 import 'package:flutteradmotors/ui/user/login/login_container_view.dart';
 import 'package:flutteradmotors/ui/user/more/more_container_view.dart';
 import 'package:flutteradmotors/ui/user/password_update/change_password_view.dart';
@@ -105,6 +106,15 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           settings: const RouteSettings(name: RoutePaths.home),
           builder: (BuildContext context) {
             return DashboardView();
+          });
+    case '${RoutePaths.login_container_vendor}':
+    // return MaterialPageRoute<dynamic>(builder: (BuildContext context) {
+    //   return DashboardView();
+
+      return MaterialPageRoute<dynamic>(
+          settings: const RouteSettings(name: RoutePaths.login_container_vendor),
+          builder: (BuildContext context) {
+            return LoginContainerViewVendor();
           });
 
     case '${RoutePaths.force_update}':
