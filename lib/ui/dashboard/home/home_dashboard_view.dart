@@ -1196,7 +1196,7 @@ class __MyHomeHeaderWidgetState extends State<_MyHomeHeaderWidget> {
               InkWell(
                 onTap: widget.selectedLocation,
                 child: Text(
-                  widget.locationName,
+                 "سس",
                   textAlign: TextAlign.right,
                   style: Theme.of(context)
                       .textTheme

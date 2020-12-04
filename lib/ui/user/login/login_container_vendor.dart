@@ -10,12 +10,12 @@ import 'package:provider/provider.dart';
 
 import 'login_view.dart';
 
-class LoginContainerView extends StatefulWidget {
+class LoginContainerViewVendor extends StatefulWidget {
   @override
   _CityLoginContainerViewState createState() => _CityLoginContainerViewState();
 }
 
-class _CityLoginContainerViewState extends State<LoginContainerView>
+class _CityLoginContainerViewState extends State<LoginContainerViewVendor>
     with SingleTickerProviderStateMixin {
   AnimationController animationController;
   @override
@@ -39,7 +39,7 @@ class _CityLoginContainerViewState extends State<LoginContainerView>
   Widget build(BuildContext context) {
     Future<bool> _requestPop() {
       animationController.reverse().then<dynamic>(
-        (void data) {
+            (void data) {
           if (!mounted) {
             return Future<bool>.value(false);
           }
@@ -52,8 +52,8 @@ class _CityLoginContainerViewState extends State<LoginContainerView>
 
     final Animation<double> animation = Tween<double>(begin: 0.0, end: 1.0)
         .animate(CurvedAnimation(
-            parent: animationController,
-            curve: const Interval(0.5 * 1, 1.0, curve: Curves.fastOutSlowIn)));
+        parent: animationController,
+        curve: const Interval(0.5 * 1, 1.0, curve: Curves.fastOutSlowIn)));
 
     print(
         '............................Build UI Again ............................');
@@ -79,7 +79,7 @@ class _CityLoginContainerViewState extends State<LoginContainerView>
                   LoginView(
                     animationController: animationController,
                     animation: animation,
-                    type: 'user',
+                    type:"vendor"
                   ),
                 ])
           ],
@@ -130,7 +130,7 @@ class _SliverAppbarState extends State<_SliverAppbar> {
         ),
         IconButton(
           icon:
-              Icon(Feather.book_open, color: Theme.of(context).iconTheme.color),
+          Icon(Feather.book_open, color: Theme.of(context).iconTheme.color),
           onPressed: () {
             Navigator.pushNamed(
               context,
