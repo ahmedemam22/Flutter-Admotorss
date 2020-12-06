@@ -38,6 +38,8 @@ class ProductRepository extends PsRepository {
       StreamController<PsResource<List<Product>>> productListStream,
       PsResource<List<Product>> dataList) {
     if (dataList != null && productListStream != null) {
+
+
       productListStream.sink.add(dataList);
     }
   }

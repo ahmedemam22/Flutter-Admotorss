@@ -27,6 +27,9 @@ class ItemDetailProvider extends PsProvider {
         itemDetailStream.stream.listen((PsResource<Product> resource) {
       _item = resource;
 
+     print( resource.data.status);
+     print("mmmmmmmmmmmmmmmm");
+
       if (resource.status != PsStatus.BLOCK_LOADING &&
           resource.status != PsStatus.PROGRESS_LOADING) {
         isLoading = false;

@@ -5,7 +5,9 @@ import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:flutteradmotors/config/ps_colors.dart';
 import 'package:flutteradmotors/config/ps_config.dart';
 import 'package:flutteradmotors/constant/ps_constants.dart';
+import 'package:flutteradmotors/db/common/ps_shared_preferences.dart';
 import 'package:flutteradmotors/provider/clear_all/clear_all_data_provider.dart';
+import 'package:flutteradmotors/provider/item_location/item_location_provider.dart';
 import 'package:flutteradmotors/repository/clear_all_data_repository.dart';
 import 'package:flutteradmotors/ui/common/dialog/version_update_dialog.dart';
 import 'package:flutteradmotors/ui/common/dialog/warning_dialog_view.dart';
@@ -194,6 +196,10 @@ class AppLoadingView extends StatelessWidget {
           RoutePaths.home,
         );
       } else {
+        await PsSharedPreferences.instance.replaceItemLocationData(
+            'itm_loca7b66748e03d457e976ca63a50e1bde0','Mandalay','21.959900', "96.086601");
+
+
         Navigator.pushReplacementNamed(
           context,
           RoutePaths.login_container,

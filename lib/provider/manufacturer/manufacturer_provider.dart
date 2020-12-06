@@ -32,6 +32,12 @@ class ManufacturerProvider extends PsProvider {
     subscription = manufacturerListStream.stream
         .listen((PsResource<List<Manufacturer>> resource) {
       updateOffset(resource.data.length);
+    /*  resource.data.forEach((element) {element.status='2';});
+      resource.data[3].status='2';
+      resource.data[5].status='2';
+      print(resource.data[0].status);
+      print(resource.data[0].name);
+      print("sssssssssss");*/
 
       _manufacturerList = resource;
 

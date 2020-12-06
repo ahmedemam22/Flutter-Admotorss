@@ -104,6 +104,7 @@ class _ChooseManufacturerListViewState extends State<ChooseManufacturerListView>
                     itemBuilder: (BuildContext context, int index) {
                       if (provider.manufacturerList.status ==
                           PsStatus.BLOCK_LOADING) {
+                        print("lllllllllllll");
                         return Shimmer.fromColors(
                             baseColor: PsColors.grey,
                             highlightColor: PsColors.white,
@@ -134,6 +135,7 @@ class _ChooseManufacturerListViewState extends State<ChooseManufacturerListView>
                               onTap: () {
                                 final Manufacturer manufacturer =
                                     provider.manufacturerList.data[index];
+
                                 Navigator.pop(context, manufacturer);
                               },
                             ));

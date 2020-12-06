@@ -34,7 +34,7 @@ class ChooseManufacturerListItem extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(PsDimens.space16),
               child: Text(
-                manufacturer.name,
+              'ssss',
                 textAlign: TextAlign.start,
                 style: Theme.of(context)
                     .textTheme

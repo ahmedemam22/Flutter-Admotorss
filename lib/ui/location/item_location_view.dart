@@ -218,11 +218,16 @@ class _ItemLocationListViewWidgetState
                               ),
                               itemLocation: dataList[index],
                               onTap: () async {
+                                print(dataList[index].id);
+                                print(dataList[index].name);
+                                print(dataList[index].lat);
+                                print(dataList[index].lng);
+                                print("ssssssssssssss");
                                 await _provider.replaceItemLocationData(
-                                    dataList[index].id,
-                                    dataList[index].name,
-                                    dataList[index].lat,
-                                    dataList[index].lng);
+                                    dataList[index].id,///itm_loca7b66748e03d457e976ca63a50e1bde0
+                                    dataList[index].name,//Mandalay
+                                    dataList[index].lat,//21.959900
+                                    dataList[index].lng);//96.086601
                                 Navigator.pushReplacementNamed(
                                     context, RoutePaths.home);
                               },
